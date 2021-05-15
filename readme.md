@@ -1,4 +1,4 @@
-# DWS (Dogg wrapped shitcoin)
+# DOGSHIT (Dogg wrapped shitcoin)
 
 DWS is a fork of Woofy from YFI.
 
@@ -6,7 +6,7 @@ It is intended to be forked many times in order to create a fleet of fun furry s
 
 To fork:
 
-rename contracts/Dogshit.yv to the name of your token and open it:
+Open contracts/Dogshit.yv:
 - set wrap token to the contract address of the token you want to wrap on line 31
 - Go to line 36 and change "Dogg Wrapped Shitcoin" to the human name of your coin.  Change the bytes to equal the number of letters and spaces in the name.  
 - Go to line 46 and 47.  Change the name and number to match above
@@ -25,8 +25,10 @@ You can read more about our governance and taxation on our Manifesto, but this m
 
 
 -- For forks -- update your policy here in the readme...
-The ratio is always 1 DOGSHIT = 1,000 WBNB. DOGSHIT is always fully backed by YFI.
+
+
+The DOGG ratio of DOGSHIT is always 1 DOGSHIT = 1,000 WBNB. DOGSHIT is always fully backed by YFI.
 
 ## Deployments
 
-- Ethereum Mainnet [`0xD0660cD418a64a1d44E9214ad8e459324D8157f1`](https://etherscan.io/address/0xd0660cd418a64a1d44e9214ad8e459324d8157f1)
+- Ethereum Mainnet [`0xfe2e25952e6c8f5c6847e1249a5ff368235f6db5`](https://bscscan.com/token/0xfe2e25952e6c8f5c6847e1249a5ff368235f6db5)
