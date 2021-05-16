@@ -1,8 +1,15 @@
 # DOGSHIT (Dogg wrapped shitcoin)
 
-DWS is a fork of Woofy from YFI.
+DOGSHIT is a fork of Woofy from YFI.
 
-It is intended to be forked many times in order to create a fleet of fun furry shitcoins that have some underlying value.
+Inspired by Banteg, It was created during the DOGG DAO Hack-a-thon in order to train non-technical dogs how to launch a smart contract with real value.  It is intended to be forked many times in order to create a fleet of fun furry shitcoins that have some underlying value.
+
+DOGSHIT is a 1/1000 WBNB microcoin forked from Woofy.  An additional 1% tax on every token transfer has been added to DOGSHIT and will be included in all forks belonging to the DAO.  This tax is sent to the multisig of the Council of Guard Dogs.  The Guard Dogs will sell all DOGG coins at frequent intervals for DOGE and BTC.  At the end of each month, all coins will be donated to Dog related charities who accept DOGE.  We already have found one in Chicago.  
+
+It is our hope that if any of our tokens experience real trade volume, a community and proper governance structure will form to focus this giving in other directions, and we look forward to handing over the keys as soon as such a community exists.
+
+You can learn more about our purpose and origins by reading [The DOGG Manifesto](https://app.gitbook.com/@dogg-dao/s/dogg-dao/the-dogg-manifesto-1) and you can join our lively and fun community on [Discord](https://discord.gg/8m5VEDZ5vY)
+
 
 To fork:
 
@@ -27,8 +34,10 @@ You can read more about our governance and taxation on our Manifesto, but this m
 -- For forks -- update your policy here in the readme...
 
 
-The DOGG ratio of DOGSHIT is always 1 DOGSHIT = 1,000 WBNB. DOGSHIT is always fully backed by YFI.
+The DOGG ratio of DOGSHIT is always 1 DOGSHIT = 1,000 WBNB. DOGSHIT is always fully backed by WBNB.
 
 ## Deployments
 
-- Ethereum Mainnet [`0xfe2e25952e6c8f5c6847e1249a5ff368235f6db5`](https://bscscan.com/token/0xfe2e25952e6c8f5c6847e1249a5ff368235f6db5)
+- BSC [`0xfe2e25952e6c8f5c6847e1249a5ff368235f6db5`](https://bscscan.com/token/0xfe2e25952e6c8f5c6847e1249a5ff368235f6db5)
+
+- Trade it on [Apeswap](https://info.apeswap.finance/pair/0x7f24df1a718af253105b6fce1287bf8839588524)
