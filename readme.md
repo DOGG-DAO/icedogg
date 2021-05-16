@@ -27,8 +27,8 @@ You can read more about our governance and taxation on our Manifesto, but this m
 -- For forks -- update your policy here in the readme...
 
 
-The DOGG ratio of DOGSHIT is always 1 DOGSHIT = 1,000 WBNB. DOGSHIT is always fully backed by YFI.
+The DOGG ratio of DOGSHIT is always 1 DOGSHIT = 1,000 WBNB. DOGSHIT is always fully backed by WBNB.
 
 ## Deployments
 
-- Ethereum Mainnet [`0xfe2e25952e6c8f5c6847e1249a5ff368235f6db5`](https://bscscan.com/token/0xfe2e25952e6c8f5c6847e1249a5ff368235f6db5)
+- Binance Smart Chain Mainnet [`0xfe2e25952e6c8f5c6847e1249a5ff368235f6db5`](https://bscscan.com/token/0xfe2e25952e6c8f5c6847e1249a5ff368235f6db5)
