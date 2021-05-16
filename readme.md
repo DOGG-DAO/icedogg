@@ -2,7 +2,7 @@
 
 DOGSHIT is a fork of Woofy from YFI.
 
-Inspired by Banteg, It was created during the DOGG DAO Hack-a-thon in order to train non-technical dogs how to launch a smart contract with real value.  It is intended to be forked many times in order to create a fleet of fun furry shitcoins that have some underlying value.
+Inspired by Banteg, It was created during the DOGG DAO Hack-a-thon in order to train non-technical doggs how to launch a smart contract with real value.  It is intended to be forked many times in order to create a fleet of fun furry shitcoins that have some underlying value.
 
 DOGSHIT is a 1/1000 WBNB microcoin forked from Woofy.  An additional 1% tax on every token transfer has been added to DOGSHIT and will be included in all forks belonging to the DAO.  This tax is sent to the multisig of the Council of Guard Dogs.  The Guard Dogs will sell all DOGG coins at frequent intervals for DOGE and BTC.  At the end of each month, all coins will be donated to Dog related charities who accept DOGE.  We already have found one in Chicago.  
 
@@ -27,7 +27,7 @@ That means you can be exposed both to a lighthearted dog coin and the DeFi darli
 - Call `dogg` to convert DOGSHIT into BNB.
 - Call `undogg` to convert BNB back to DOGSHIT.
 
-####All transfers of DOGSHIT and it's and forks are subject to a 0.1% tax on each transfer.
+####All transfers of DOGSHIT and it's and forks are subject to a 1% tax on each transfer.
 You can read more about our governance and taxation on our Manifesto, but this money will traded frequently for DOGE or BTC and donated to charity on a monthly basis.
 
 
