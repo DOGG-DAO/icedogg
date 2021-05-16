@@ -22,7 +22,7 @@ Open contracts/Dogshit.yv:
 Now you have to adjust the "Banteg Bonding Curve."  The scaling of tokens basically works by using different decimals on the two contracts.  In the original Woofy, YFI has 18 decimals and woofy has 12.  The difference 6, is the number of 0's involved in scaling so 1,000,000.  1 Woofy is 1/1million wifey.  1/1000 would be a differential of 3.   Most tokens have decimals of 18, but not all of them so check on etherscan and calculate the decimals to get your curve.  Haven't tested, but you should be able to create macrotokens too, by setting the shitcoin to have more decimals than the underlying wrapped token.
 
 Bantag's a special *Woof* bonding curve, allows two-way conversion between the tokens.
-That means you can be exposed both to a lighthearted dog coin and the DeFi darling blue chip at the same time.
+That means you can be exposed both to a lighthearted dog coin and the underlying token (WBNB) at the same time.
 
 - Call `dogg` to convert DOGSHIT into BNB.
 - Call `undogg` to convert BNB back to DOGSHIT.
