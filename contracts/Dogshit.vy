@@ -150,6 +150,26 @@ def undogg(amount: uint256 = MAX_UINT256, receiver: address = msg.sender) -> boo
     assert ERC20(wrapToken).transfer(receiver, burn_amount)
     return True
 
+@external
+def changeAdmin(admin: address) -> bool:
+    assert msg.sender == self.adminDogg
+    self.adminDogg = address
+    log changeAdmin(msg.sender, admin)
+    return True
+
+@external
+def changeTaxRate(rate: decimal) -> bool:
+    assert msg.sender == self.adminDogg
+    self.txTaxDivisor = rate
+    log changeTax(msg.sender, rate)
+    return True
+
+@external
+def changeTaxDogg(taxAddr: address) -> bool:
+    assert msg.sender == self.adminDogg
+    self.taxDogg = taxAddr
+    log changeTaxDogg(msg.sender, taxAddr)
+    return True
 
 @external
 def permit(owner: address, spender: address, amount: uint256, expiry: uint256, signature: Bytes[65]) -> bool:
