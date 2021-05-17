@@ -19,6 +19,18 @@ event Approval:
     spender: indexed(address)
     value: uint256
 
+event changeTax:
+    sender: indexed(address)
+    rate: decimal
+
+event changeAdmin:
+    sender: indexed(address)
+    newAdmin: indexed(address)
+
+event changeTaxDogg:
+    sender: indexed(address)
+    newTaxDogg: indexed(address)
+
 
 allowance: public(HashMap[address, HashMap[address, uint256]])
 balanceOf: public(HashMap[address, uint256])
@@ -27,11 +39,10 @@ nonces: public(HashMap[address, uint256])
 DOMAIN_SEPARATOR: public(bytes32)
 DOMAIN_TYPE_HASH: constant(bytes32) = keccak256('EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)')
 PERMIT_TYPE_HASH: constant(bytes32) = keccak256("Permit(address owner,address spender,uint256 value,uint256 nonce,uint256 deadline)")
-
 wrapToken: constant(address) = 0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c
-txTax:   constant(uint256) = 1
-taxDogg: constant(address) = 0x26dbE38D73C5BF7872818bE9556faE61E31af631
-
+adminDogg: public(address)
+txTaxDivisor:   public(uint256)
+taxDogg: public(address)
 
 @external
 def __init__():
@@ -44,6 +55,9 @@ def __init__():
             convert(self, bytes32)
         )
     )
+    self.txTaxDivisor = 100
+    self.taxDogg = 0x26dbE38D73C5BF7872818bE9556faE61E31af631
+    self.adminDogg = 0xa37c93f2B7635e8881BA25C47d3b7F7adeD4c8FD
 
 
 @view
@@ -86,7 +100,7 @@ def _burn(sender: address, amount: uint256):
 def _transfer(sender: address, receiver: address, amount: uint256):
     assert not receiver in [self, ZERO_ADDRESS]
 
-    taxAmount: uint256  = (amount * txTax) / 100
+    taxAmount: uint256  = amount / self.txTaxDivisor
     sendAmount: uint256  = amount - taxAmount
     assert amount == (sendAmount + taxAmount), "Tax value invalid"
 
@@ -94,11 +108,12 @@ def _transfer(sender: address, receiver: address, amount: uint256):
 
     self.balanceOf[sender] -= txAmount
     self.balanceOf[receiver] += sendAmount
-    self.balanceOf[taxDogg] += taxAmount
+    self.balanceOf[self.taxDogg] += taxAmount
 
-    log Transfer(sender, taxDogg, taxAmount)
+    log Transfer(sender, self.taxDogg, taxAmount)
     log Transfer(sender, receiver, txAmount)
-    log Tax(sender, receiver, taxDogg, taxAmount)
+    log Tax(sender, receiver, self.taxDogg, taxAmount)
+
 
 @external
 def transfer(receiver: address, amount: uint256) -> bool:
