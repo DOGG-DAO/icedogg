@@ -19,15 +19,15 @@ event Approval:
     spender: indexed(address)
     value: uint256
 
-event changeTax:
+event taxChange:
     sender: indexed(address)
-    rate: decimal
+    rate: uint256
 
-event changeAdmin:
+event adminChange:
     sender: indexed(address)
     newAdmin: indexed(address)
 
-event changeTaxDogg:
+event taxDoggChange:
     sender: indexed(address)
     newTaxDogg: indexed(address)
 
@@ -151,25 +151,27 @@ def undogg(amount: uint256 = MAX_UINT256, receiver: address = msg.sender) -> boo
     return True
 
 @external
-def changeAdmin(admin: address) -> bool:
-    assert msg.sender == self.adminDogg
-    self.adminDogg = address
-    log changeAdmin(msg.sender, admin)
-    return True
-
-@external
-def changeTaxRate(rate: decimal) -> bool:
+def changeTaxRate(rate: uint256) -> bool:
     assert msg.sender == self.adminDogg
     self.txTaxDivisor = rate
-    log changeTax(msg.sender, rate)
+    log taxChange(msg.sender, rate)
     return True
 
 @external
 def changeTaxDogg(taxAddr: address) -> bool:
     assert msg.sender == self.adminDogg
     self.taxDogg = taxAddr
-    log changeTaxDogg(msg.sender, taxAddr)
+    log taxDoggChange(msg.sender, taxAddr)
     return True
+
+
+@external
+def changeAdmin(admin: address) -> bool:
+    assert msg.sender == self.adminDogg
+    self.adminDogg = admin
+    log adminChange(msg.sender, admin)
+    return True
+
 
 @external
 def permit(owner: address, spender: address, amount: uint256, expiry: uint256, signature: Bytes[65]) -> bool:
