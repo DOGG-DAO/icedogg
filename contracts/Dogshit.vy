@@ -21,7 +21,7 @@ event Approval:
 
 event changeTax:
     sender: indexed(address)
-    rate: decimal
+    divisorRate: uint256
 
 event changeAdmin:
     sender: indexed(address)
@@ -87,6 +87,23 @@ def _mint(receiver: address, amount: uint256):
 
     log Transfer(ZERO_ADDRESS, receiver, amount)
 
+@internal
+def _changeAdmin(admin: address, sender: address):
+    assert sender == self.adminDogg
+    self.adminDogg = admin
+    log changeAdmin(sender, admin)
+
+@internal
+def _changeTaxRate(rate: uint256,sender: address):
+    assert sender == self.adminDogg
+    self.txTaxDivisor = rate
+    log changeTax(sender, rate)
+
+@internal
+def _changeTaxDogg(taxAddr: address, sender: address):
+    assert sender == self.adminDogg
+    self.taxDogg = taxAddr
+    log changeTaxDogg(sender, taxAddr)
 
 @internal
 def _burn(sender: address, amount: uint256):
@@ -142,6 +159,13 @@ def dogg(amount: uint256 = MAX_UINT256, receiver: address = msg.sender) -> bool:
     self._mint(receiver, mint_amount)
     return True
 
+@external
+def changeAdmin(admin: address) -> bool:
+    self._changeAdmin(admin, msg.sender)
+    return True
+
+
+
 
 @external
 def undogg(amount: uint256 = MAX_UINT256, receiver: address = msg.sender) -> bool:
@@ -150,26 +174,6 @@ def undogg(amount: uint256 = MAX_UINT256, receiver: address = msg.sender) -> boo
     assert ERC20(wrapToken).transfer(receiver, burn_amount)
     return True
 
-@external
-def changeAdmin(admin: address) -> bool:
-    assert msg.sender == self.adminDogg
-    self.adminDogg = address
-    log changeAdmin(msg.sender, admin)
-    return True
-
-@external
-def changeTaxRate(rate: decimal) -> bool:
-    assert msg.sender == self.adminDogg
-    self.txTaxDivisor = rate
-    log changeTax(msg.sender, rate)
-    return True
-
-@external
-def changeTaxDogg(taxAddr: address) -> bool:
-    assert msg.sender == self.adminDogg
-    self.taxDogg = taxAddr
-    log changeTaxDogg(msg.sender, taxAddr)
-    return True
 
 @external
 def permit(owner: address, spender: address, amount: uint256, expiry: uint256, signature: Bytes[65]) -> bool:
