@@ -166,12 +166,12 @@ def changeAdmin(admin: address) -> bool:
 
 @external
 def changeTaxRate(rate: uint256) -> bool:
-    _changeTaxRate(rate, msg.sender)
+    self._changeTaxRate(rate, msg.sender)
     return True
 
 @external
 def changeTaxDogg(taxAddr: address) -> bool:
-    _changeTaxDogg(taxAddr, msg.sender)
+    self._changeTaxDogg(taxAddr, msg.sender)
     return True
 
 
