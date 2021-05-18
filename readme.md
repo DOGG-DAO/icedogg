@@ -2,7 +2,7 @@
 
 ICEDOGG is a fork of DOGSHIT from Dogg DAO which is a fork of Woofy from YFI.
 
-ICEDOGG is an antisat demoninated macroDOGE forked from DOGSHIT.  
+ICEDOGG is an unsanctioned 1 to 10,000 Popsicle ICE macrocoin forked from DOGSHIT.  
 
 - Call `dogg` to convert ICEDOGG into ICE.
 - Call `undogg` to convert ICE back to ICEDOGG.
