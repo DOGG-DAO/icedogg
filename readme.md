@@ -14,6 +14,4 @@ The Dogg DAO ratio of ICEDOGG is always 1 ICEDOGG = 10,000 ICE. ICEDOGG is alway
 
 ## Deployments
 
-- UPDATE NEEDED BSC [`0xfe2e25952e6c8f5c6847e1249a5ff368235f6db5`](https://bscscan.com/token/0xfe2e25952e6c8f5c6847e1249a5ff368235f6db5)
-
-- UPDATE NEEDED Trade it on [Apeswap](https://info.apeswap.finance/pair/0x7f24df1a718af253105b6fce1287bf8839588524)
+- BSC [`0xc37f955b96A14Ba54Ba8B41B706Cf763b6bF9fFd`](https://bscscan.com/address/0xc37f955b96A14Ba54Ba8B41B706Cf763b6bF9fFd)
